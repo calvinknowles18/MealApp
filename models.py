@@ -1,6 +1,7 @@
 # models.py
-from datetime import datetime
-from sqlalchemy import String, text
+from datetime import datetime, timezone
+from sqlalchemy import String, DateTime
+from sqlalchemy.sql import func
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 class Base(DeclarativeBase):
@@ -21,5 +22,6 @@ class Meal(Base):
     
     # Timestamp when row was created
     created_at: Mapped[datetime] = mapped_column(
-        default_factory=datetime.utcnow,            # Python-side default
-        server_default=text("(datetime('now'))"))    # SQLite-side default)
+        DateTime(timezone=True),
+        default = lambda: datetime.now(timezone.utc),            # Python-side default
+        server_default = func.now())    # SQLite-side default)
