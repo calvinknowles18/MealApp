@@ -1,4 +1,4 @@
-# Meals.py
+# data.py
 
 class Meals:
     def __init__(self):
