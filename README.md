@@ -40,22 +40,30 @@ A weekly dinner planner with a **FastAPI** backend and a **Next.js (TypeScript +
 ---
 
 ## Repository Structure
+
+```text
 MealApp/
-├─ backend/ # FastAPI service
-│ ├─ app.py # FastAPI app + /meals routes
-│ ├─ db.py # SQLAlchemy engine + session
-│ ├─ models.py # ORM models (Meal)
-│ ├─ data.py # (legacy helpers if any)
-│ ├─ requirements.txt # Python dependencies
-│ └─ app.db # created at runtime (git-ignored)
-├─ web/ # Next.js (App Router, TS, Tailwind)
-│ ├─ package.json
-│ ├─ next.config.js
-│ ├─ tailwind.config.ts
-│ ├─ postcss.config.js
-│ └─ src/app/... # routes, pages, components
+├─ backend/                   # FastAPI service
+│  ├─ app.py                  # FastAPI app + /meals routes
+│  ├─ db.py                   # SQLAlchemy engine + session
+│  ├─ models.py               # ORM models (Meal)
+│  ├─ data.py                 # (legacy helpers, if any)
+│  ├─ requirements.txt        # Python dependencies
+│  └─ app.db                  # created at runtime (git-ignored)
+├─ web/                       # Next.js (App Router, TS, Tailwind)
+│  ├─ package.json
+│  ├─ next.config.ts
+│  ├─ tailwind.config.ts
+│  ├─ postcss.config.js
+│  └─ src/
+│     └─ app/
+│        ├─ page.tsx
+│        ├─ layout.tsx
+│        └─ lib/
+│           └─ api.ts
 ├─ .gitignore
 └─ README.md
+```
 
 > If you don’t see `app.db` in VS Code, disable the setting
 > **Explorer: Exclude Git Ignore**, or run `dir app.db`.
