@@ -75,7 +75,7 @@ MealApp/
 ### Clone and enter the repo
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/calvinknowles18/MealApp.git
 cd MealApp
 ```
 
